@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * Created by Guest on 8/8/17.
  */
 public class Post {
-   private final String content;
+   private String content;
    private static ArrayList<Post> instances = new ArrayList<>();
    private boolean published;
    private LocalDateTime createdAt;
@@ -44,7 +44,18 @@ public class Post {
     public int getId() {
         return id;
     }
+
     public static Post findById(int id){
         return instances.get(id-1);
     }
+
+    public void update(String content){
+        this.content = content;
+    }
+
+    public void deletePost(){
+        instances.remove(id-1);
+    }
+
+
 }
